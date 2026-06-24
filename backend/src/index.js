@@ -3,6 +3,8 @@ import dotenv from 'dotenv'
 import dns from 'dns'
 import cors from 'cors'
 import Dbconnect from './lib/Db.js';
+import authRouter from './routes/authRoutes.js'
+import userRouter from './routes/userRoutes.js'
 dns.setServers([
   "8.8.8.8", // Google DNS
   "8.8.4.4"
@@ -16,6 +18,8 @@ app.use(
     credentials: true,
   })
 );
+app.use("/api/auth",authRouter);
+app.use("/api/user",userRouter)
 const port = process.env.PORT;
 app.listen(port,()=>{
     Dbconnect();
