@@ -44,11 +44,11 @@ function HomeScreen() {
     
   ]
   return (
-    <div className="pt-15 ">
+    <div className="pt-10 sm:pt-12 md:pt-16 ">
       <section className=" h-screen p-5 flex items-center justify-center">
          <div className="text-center w-full ">
           <div>
-            <h1 className="font-bold text-3xl md:text-7xl">
+            <h1 className="font-bold text-5xl md:text-7xl">
               <div className="bg-linear-to-r from-ai-gradient-from to-ai-gradient-to bg-clip-text text-transparent">
                 AI Quiz
               </div>{" "}
