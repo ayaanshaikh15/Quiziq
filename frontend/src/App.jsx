@@ -1,23 +1,24 @@
+import { Route, Routes } from "react-router-dom"
+import HomeScreen from "./components/HomeScreen"
+import Layout from "./components/Layout"
+import Quiz from "./components/Quiz"
+import NotFound from "./components/NotFound"
 
-import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/react'
 
 function App() {
   return (
     <>
-      <header>
-        <Show when="signed-out">
-          <SignInButton mode='modal' >
-            <button className='px-4 py-2 text-sm bg-black text-amber-50 rounded-2xl border-2 border-amber-50 m-3'>SignIn</button>
-          </SignInButton>
-       
-          <SignUpButton mode='modal'>
-            <button className='px-4 py-2 text-sm bg-black text-amber-50 rounded-2xl border-2 border-amber-50 m-3'>SignUp</button>
-          </SignUpButton>
-        </Show>
-        <Show when="signed-in">
-          <UserButton />
-        </Show>
-      </header>
+    <Routes>
+      {/*routes with navbar*/}
+      <Route element={<Layout/>}>
+        <Route path="/" element={<HomeScreen/>}/>
+      </Route>
+
+    {/*routes without navbar */}
+   <Route path="/quiz" element={<Quiz/>}/>
+   <Route path="*" element={<NotFound/>}/>
+    </Routes>
+      
     </>
   )
 }
