@@ -141,7 +141,7 @@ function HomeScreen() {
 
       <section className="w-full  h-auto  mt-20">
         <div className="flex justify-between items-center bg-navbar h-17  w-full">
-        <div className="text-text mx-6">QuizIQ</div>
+        <div className="text-[12px] sm:text-lg mx-6">QuizIQ</div>
         <nav className="flex justify-center items-center gap-4 md:gap-7 ">
            {links.map((value,index)=>
                 <Link key={index} to={value.link} className="text-gray-400 text-[9px] sm:text-[12px] md:text-[14px]">{value.title}</Link>
