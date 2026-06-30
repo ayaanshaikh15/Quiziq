@@ -22,22 +22,22 @@ function HomeScreen() {
   ]
   const cards =[
     {
-      icon:'../../public/document.png',
+      icon:'./document.png',
       heading:'Enter Your Topic',
       subheading:'Type any subject or paste your syudy material into the prompt box'
     },
     {
-      icon:'../../public/processor.png',
+      icon:'./processor.png',
       heading:'AI Builds the Quiz',
       subheading:'Our model generates precise multiple-choice questions in seconds'
     },
     {
-      icon:'../../public/graduation.png',
+      icon:'./graduation.png',
       heading:'Take the Quiz',
       subheading:'Answer questions in clean focused,distraction-free interface'
     },
     {
-      icon:'../../public/stack.png',
+      icon:'./stack.png',
       heading:'Review & Improve',
       subheading:'See your score, correct answers, and track progress over time'
     }
