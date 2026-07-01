@@ -1,13 +1,13 @@
 import React from 'react'
 import Sidebar from './sidebar'
 
-function HomeScreen() {
+function Settings() {
   return (
     <div className="pt-16 sm:pl-50 md:pl-60">
         <Sidebar/>
-        fgdf
+        
      </div>
   )
 }
 
-export default HomeScreen
+export default Settings

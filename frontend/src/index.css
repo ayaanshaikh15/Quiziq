@@ -144,3 +144,17 @@ body {
   width: 38px;
   height: 38px;
 }
+
+@media (max-width: 640px) {
+  .cl-userButtonAvatarBox {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 768px) { 
+.cl-userButtonAvatarBox {
+    width: 34px;
+    height: 34px;
+  }
+
+}
