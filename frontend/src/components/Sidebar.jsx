@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Sidebar() {
     const screens=[
@@ -9,15 +9,19 @@ function Sidebar() {
         {title:'Settings',route:'/settings',icon:'./setting.png'}
     ];
     const navigate = useNavigate();
-    
+    const location = useLocation();
 
   return (
     <>
-    <div className='sm:flex fixed left-0 top-17  hidden md:w-60 border-r   flex-col justify-between bg-navbar  sm:h-167 sm:w-50  border-l border-ai-border'>
-     <div  className='flex flex-col justify-center m-3'>
+    <div className="hidden sm:flex fixed top-17 left-0 w-56 md:w-64 h-[calc(100vh-4rem)] flex-col justify-between border-r border-ai-border bg-navbar">
+  <div  className='flex flex-col justify-center m-3'>
       {screens.map((val,index)=>
-      <div className=" cursor-pointer my-1 p-4 hover:bg-purple-400/30 rounded-2xl" onClick={()=>navigate(val.route)} key={index}>
-        <span className='text-gray-400 text-[14px] flex items-center gap-2'><img className="w-4 h-4 "  src={val.icon} alt={val.title}/>{" "}{val.title}</span>
+      <div className={`text-gray-500 cursor-pointer my-1 p-4 hover:text-gray-400 hover:bg-purple-500/20 rounded-2xl ${
+      location.pathname === val.route
+        ? "bg-primary text-white"
+        : "hover:bg-purple-500/20"
+    }`} onClick={()=>navigate(val.route)} key={index}>
+        <span className='text-[14px] flex items-center gap-2'><img className="w-4 h-4 "  src={val.icon} alt={val.title}/>{" "}{val.title}</span>
       </div>)}
     
      </div>
