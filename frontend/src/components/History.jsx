@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import Sidebar from './sidebar'
+import Sidebar from './Sidebar'
 import { ThemeContext } from '../ThemeContext';
 
 function History() {
