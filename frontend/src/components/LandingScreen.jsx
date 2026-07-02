@@ -1,17 +1,14 @@
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "../ThemeContext";
 import { Link } from "react-router-dom";
+import { useClerk } from "@clerk/react";
 function LandingScreen() {
  const { theme } = useContext(ThemeContext);
- 
+ const { openSignIn } = useClerk();
   const [Prompt, setPrompt] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(Prompt=="")
-      return alert("Describe your topic...")
-    if(Prompt.length<100)
-      return alert("Topic must be of atleast 100 characters");
-    alert(Prompt)
+    openSignIn();
   };
   const links=[
     {link:'/privacy',title:'Privacy'},
@@ -135,7 +132,7 @@ function LandingScreen() {
             </h1>
         <p className="text-gray-400 text-[10px] md:text-[13px] max-w-lg mx-auto my-2 md:my-2">Join thousands of learners already using QuizIQ to study smarter</p>
          </div>
-         <button className="bg-primary  hover:bg-primary-hover text-amber-50 p-2 md:p-3 text-[12px] md:text-base border border-ai-bubble rounded-xl  ">Create your first quiz - free</button>
+         <button className="bg-primary  hover:bg-primary-hover text-amber-50 p-2 md:p-3 text-[12px] md:text-base border border-ai-bubble rounded-xl  " onClick={()=>openSignIn()}>Create your first quiz - free</button>
       </div>
       
       </section>

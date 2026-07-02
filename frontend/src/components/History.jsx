@@ -53,7 +53,7 @@ function History() {
        
         </div>
          <div className="flex gap-4 items-center justify-center">
-          <p className="text-gray-400 text-[12px] md:text-[14px]"> {(value.score/value.questions)*100}{"%"}</p>
+          <p className={`text-gray-400 text-[12px] md:text-[14px] `}> {(value.score/value.questions)*100}{"%"}</p>
           <button className=" text-amber-50 p-2 md:p-3 text-[12px] md:text-base  rounded-full  ">
             <img src="./downloads.png" alt="Download" className="w-4 h-4 md:w-5 md:h-5"  />
             </button>

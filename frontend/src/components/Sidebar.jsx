@@ -1,3 +1,4 @@
+import { useClerk } from '@clerk/react';
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -10,6 +11,7 @@ function Sidebar() {
     ];
     const navigate = useNavigate();
     const location = useLocation();
+const { signOut } = useClerk();
 
   return (
     <>
@@ -25,8 +27,8 @@ function Sidebar() {
       </div>)}
     
      </div>
-     <footer className="flex  border-t border-ai-border p-5 gap-2 items-center">
-        <div className='flex gap-2 cursor-pointer items-center'>
+     <footer  className="flex  border-t border-ai-border p-5 gap-2 items-center">
+        <div onClick={()=>signOut()} className='flex gap-2 cursor-pointer items-center'>
       <img  src='./logout.png' className="w-4 h-4  mx-1 " />
       <span className='text-red-500 text-[14px] '>Logout</span>
    </div>

@@ -8,6 +8,7 @@ export default function ThemedClerkProvider({ children }) {
 
   return (
     <ClerkProvider
+    
       appearance={{
         theme: theme === "dark" ? dark : undefined,
       }}
