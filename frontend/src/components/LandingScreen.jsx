@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "../ThemeContext";
 import { Link } from "react-router-dom";
-import Sidebar from "./sidebar";
 function LandingScreen() {
  const { theme } = useContext(ThemeContext);
  
