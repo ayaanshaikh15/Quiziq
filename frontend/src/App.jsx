@@ -9,6 +9,7 @@ import LandingScreen from "./components/LandingScreen";
 import Score from "./components/Score";
 import History from "./components/History";
 import ProtectedRoute from "./components/ProtectedRoute";
+import LandingRedirect from "./components/LandingRedirect";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <Routes>
   {/* Public routes */}
   <Route path="/" element={<Layout />}>
-    <Route index element={<LandingScreen />} />
+    <Route index element={<LandingRedirect/>} />
   </Route>
 
   {/* Protected routes with Navbar */}

@@ -6,7 +6,7 @@ function History() {
   const { theme } = useContext(ThemeContext);
   const [search, setsearch] = useState("")
   const quiz=[
-    {title:'JavaScript Basics',date:'2023-01-01',questions:10,score:8},
+    {title:'JavaScript Basics',date:'2023-01-01',questions:10,score:9},
     {title:'React Components',date:'2023-01-02',questions:15,score:12},
     {title:'Node.js Fundamentals',date:'2023-01-03',questions:20,score:18},
     {title:'Python Programming',date:'2023-01-04',questions:25,score:22},
@@ -19,6 +19,13 @@ function History() {
     {title:'Node.js Fundamentals',date:'2023-01-03',questions:20,score:18},
     {title:'Python Programming',date:'2023-01-04',questions:25,score:22},
   ]
+  const handleDownload = (value,e) => {
+    e.stopPropagation();
+    alert("Download started!") // Prevent the click event from propagating to the parent div
+  }
+  const handleOpenQuiz=(value)=>{
+    alert(`Opening quiz: ${value.title}`)
+  }
   return (
    <>
     <div className="pt-18 sm:pl-56 md:pl-64 m-8">
@@ -42,8 +49,8 @@ function History() {
   } />
        </div> 
       <div className="flex flex-col gap-2">
-        {quiz.map((value,index)=> <div key={index} className="flex justify-between items-center shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] rounded-2xl p-4 bg-navbar ">  
-        <div className="flex gap-4 items-center">
+        {quiz.map((value,index)=> <div key={index} onClick={()=>handleOpenQuiz(value)} className=" cursor-pointer flex justify-between items-center shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] rounded-2xl p-4 bg-navbar ">  
+        <div  className="flex gap-4 items-center">
         <img src='./document.png' alt="Document" className="w-5 h-5 md:w-6 md:h-6" />
         <div className="flex flex-col gap-1">
           <h3 className="font-bold text-sm md:text-base">{value.title}</h3>
@@ -53,9 +60,19 @@ function History() {
        
         </div>
          <div className="flex gap-4 items-center justify-center">
-          <p className={`text-gray-400 text-[12px] md:text-[14px] `}> {(value.score/value.questions)*100}{"%"}</p>
-          <button className=" text-amber-50 p-2 md:p-3 text-[12px] md:text-base  rounded-full  ">
-            <img src="./downloads.png" alt="Download" className="w-4 h-4 md:w-5 md:h-5"  />
+          
+         <p
+  className={`text-[12px] md:text-[14px] ${
+    (value.score / value.questions) * 100 > 85
+      ? "text-green-500"
+      : (value.score / value.questions) * 100 >= 40
+      ? "text-yellow-500"
+      : "text-red-500"
+  }`}
+>
+  {((value.score / value.questions) * 100).toFixed(0)}%
+</p><button onClick={(e) => handleDownload(value,e)} className="cursor-pointer hover:bg-purple-500/20 text-amber-50 p-2  text-[12px] md:text-base  rounded-full  ">
+            <img src="./downloads.png" alt="Download" className="w-4 h-4 md:w-5 md:h-5  "  />
             </button>
           </div>
           </div>

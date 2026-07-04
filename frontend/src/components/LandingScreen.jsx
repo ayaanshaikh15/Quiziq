@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "../ThemeContext";
-import { Link } from "react-router-dom";
-import { useClerk } from "@clerk/react";
+import { Link, Navigate } from "react-router-dom";
+import { useAuth, useClerk } from "@clerk/react";
 function LandingScreen() {
  const { theme } = useContext(ThemeContext);
  const { openSignIn } = useClerk();
+  const { isLoaded, isSignedIn } = useAuth();
   const [Prompt, setPrompt] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,6 +41,7 @@ function LandingScreen() {
     }
     
   ]
+  
   return (
     <div className="pt-10 sm:pt-12 md:pt-16  ">
         
