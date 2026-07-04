@@ -112,7 +112,7 @@ function LandingScreen() {
       </div>
       <div className="flex flex-col md:flex-row  mt-10 md:mt-20">
        {cards.map((value,index)=>
-       <div key={index} className=" bg-navbar shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] p-6 rounded-2xl border border-ai-border my-2 md:m-2 flex flex-col gap-4 ">
+       <div key={index} className="flex-1 bg-navbar shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] p-6 rounded-2xl border border-ai-border my-2 md:m-2 flex flex-col gap-4 ">
        <div className="flex items-center font-bold "><img src={value.icon} className="w-9 h-9 md:w-12 md:h-12 " alt="img"/> <span className="text-gray-400 mx-4">0{index+1}</span></div>
        <h3>{value.heading}</h3>
         <p className="text-gray-400 w-full border-none outline-none focus:outline-none focus:ring-0 text-[12px] md:text-[14px] resize-none">{value.subheading}</p>

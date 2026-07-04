@@ -34,7 +34,7 @@ function Navbar() {
             <Show when="signed-in" >
             <div className="flex gap-4 md:gap-6">
                
-             <button onClick={Toggle} className="sm:flex items-center justify-center hidden ">
+             <button onClick={Toggle} className="flex items-center justify-center  ">
                   {theme === "dark" ? (
                     <img src="./lightbtn.png" className="w-6 h-6 md:w-7 md:h-7" alt="light" />
                   ) : (
