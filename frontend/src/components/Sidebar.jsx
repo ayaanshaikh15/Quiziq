@@ -1,6 +1,7 @@
 import { useClerk } from '@clerk/react';
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
+import Model from './Model';
 
 function Sidebar() {
     const screens=[
@@ -12,7 +13,7 @@ function Sidebar() {
     const navigate = useNavigate();
     const location = useLocation();
 const { signOut } = useClerk();
-
+const [open, setopen] = useState(false)
   return (
     <>
     <div className="hidden sm:flex fixed top-17 left-0 w-56 md:w-64 h-[calc(100vh-4rem)] flex-col justify-between border-r border-ai-border bg-navbar">
@@ -27,8 +28,9 @@ const { signOut } = useClerk();
       </div>)}
     
      </div>
-     <footer  className="flex  border-t border-ai-border p-5 gap-2 items-center">
-        <div onClick={()=>signOut()} className='flex gap-2 cursor-pointer items-center'>
+     {open && <Model open={open} setopen={setopen} />}
+     <footer onClick={()=>setopen(true)}  className="flex  border-t border-ai-border p-5 gap-2 items-center">
+        <div  className='flex gap-2 cursor-pointer items-center'>
       <img  src='./logout.png' className="w-4 h-4  mx-1 " />
       <span className='text-red-500 text-[14px] '>Logout</span>
    </div>

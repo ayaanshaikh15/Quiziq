@@ -99,7 +99,7 @@ function History() {
                   className="w-5 h-5 md:w-6 md:h-6"
                 />
                 <div className="flex flex-col gap-1">
-                  <h3 className="font-bold text-sm md:text-base">
+                  <h3 className="font-bold text-[12px] md:text-base">
                     {value.title}
                   </h3>
                   <p className="text-gray-400 text-[9px] md:text-[13px]">

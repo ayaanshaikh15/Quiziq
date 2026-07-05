@@ -93,23 +93,23 @@ function Dashboard() {
               weekday: "long",
             })}
             {", "}
-            {date.getDay()}{" "}
+            {date.getDate()}{" "}
             {date.toLocaleDateString("en-US", {
               month: "long",
             })}
-            {" • "}Here's is your learnung snapshot.
+            {" • "}Here is your learning snapshot.
           </p>
         </div>
         <div className="flex flex-row gap-2 mt-5">
           {data.map((value, index) => (
             <div
               key={index}
-              className="flex-1 bg-navbar shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] p-3 md:p-6 rounded-2xl border border-ai-border my-3  flex flex-col gap-1 md:gap-4   "
+              className="flex-1 bg-navbar shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] p-3 md:p-6 rounded-2xl border border-ai-border my-3  flex flex-col  md:gap-2   "
             >
               <div className="flex items-center font-bold ">
                 <img
                   src={value.icon}
-                  className="w-4 h-4 md:w-8 md:h-8 "
+                  className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8"
                   alt="img"
                 />{" "}
                 <br />
@@ -118,10 +118,10 @@ function Dashboard() {
               <p className="bg-linear-to-r text-base md:text-4xl lg:text-5xl font-bold from-ai-gradient-from to-ai-gradient-to bg-clip-text text-transparent">
                 {value.score}
               </p>
-               <div>
+               <div className="flex flex-col justify-between gap-1 md:gap-2">
               <h3 className="text-[7px] md:text-[12px] lg:text-sm font-bold">{value.title}</h3>
              
-              <p className="text-gray-400 w-full border-none outline-none focus:outline-none focus:ring-0 text-[5px] md:text-[12px] resize-none mt-1 ">
+              <p className="text-gray-400 w-full border-none outline-none focus:outline-none focus:ring-0 text-[5.3px] md:text-[10px] lg:text-sm resize-none ">
                 {value.subtitle}
               </p>
               </div>
@@ -130,7 +130,7 @@ function Dashboard() {
         </div>
         <div className="flex justify-between text-sm items-center my-6">
           <div className="font-bold">Recent Activity</div>
-          <p onClick={()=>navigate('/history')} className="hover:text-purple-400 text-[#a044ce] cursor-pointer ">
+          <p onClick={()=>navigate('/history')} className="hover:text-purple-400 text-[12px] md:text-sm text-[#a044ce] cursor-pointer ">
             View All &gt;
           </p>
         </div>
@@ -148,7 +148,7 @@ function Dashboard() {
                   className="w-5 h-5 md:w-6 md:h-6"
                 />
                 <div className="flex flex-col gap-1">
-                  <h3 className="text-[7px] md:text-[12px] lg:text-sm">
+                  <h3 className="font-bold text-[12px] md:text-base" >
                     {value.title.length
                       > 20
                       ? `${value.title.substring(0, 20)}...`
