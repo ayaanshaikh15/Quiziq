@@ -18,7 +18,7 @@ function HomeScreen() {
      <div className="pt-18 sm:pl-56 md:pl-64 m-5 ">
         <Sidebar/>
             
-      <section className=" p-5 flex items-center justify-center sm:mt-14 lg:mt-2 mt-24">
+      <section className=" flex items-center justify-center sm:mt-14 lg:mt-1 mt-24">
          <div className="text-center w-full ">
           <div>
             <h1 className="font-bold text-5xl md:text-7xl">
