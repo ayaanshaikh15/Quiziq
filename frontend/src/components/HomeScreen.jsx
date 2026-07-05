@@ -15,19 +15,24 @@ function HomeScreen() {
       alert(Prompt)
     };
   return (
-     <div className="pt-18 sm:pl-56 md:pl-64 m-8">
+     <div className="pt-18 sm:pl-56 md:pl-64 m-5 ">
         <Sidebar/>
-         <div className="text-left ">
-         <h1 className="font-bold text-3xl md:text-5xl">
-          
-               AI Quiz {" "} {/* add text here*/}
-              <span className="bg-linear-to-r from-ai-gradient-from to-ai-gradient-to bg-clip-text text-transparent">
-                Generator
-              </span>
+            
+      <section className=" p-5 flex items-center justify-center sm:mt-14 lg:mt-2 mt-24">
+         <div className="text-center w-full ">
+          <div>
+            <h1 className="font-bold text-5xl md:text-7xl">
+              <div className="bg-linear-to-r from-ai-gradient-from to-ai-gradient-to bg-clip-text text-transparent">
+                AI Quiz
+              </div>{" "}
+              Generator
             </h1>
-        <p className="text-gray-400 text-[9px] md:text-[13px] max-w-lg  my-1 md:my-2">Describe your topic and configure settings below</p>
-      </div>
-      <div className="flex justify-center items-center h-[calc(100vh-30rem)] md:h-[calc(100vh-25rem)] mt-10 ">
+            <p className="text-gray-400 text-[10px] md:text-base max-w-lg mx-auto my-4">
+              Transform any topic into a focused, interactive quiz in minutes.
+              Learn smarter, retain more, and track your growth.
+            </p>
+          </div>
+          <div className="flex justify-center my-12 ">
             <form onSubmit={(e)=>handleSubmit(e)} className="p-6  shadow-[0_0_20px_rgba(168,85,247,0.3)] max-w-2xl border  rounded-3xl border-ai-border w-full bg-navbar">
               <textarea
                 placeholder="Describe your topic..."
@@ -64,6 +69,10 @@ function HomeScreen() {
               </div>
             </form>
           </div>
+          
+        </div>
+       
+      </section>
      </div>
   )
 }
