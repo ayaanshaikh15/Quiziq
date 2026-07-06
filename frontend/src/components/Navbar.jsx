@@ -35,13 +35,13 @@ function Navbar() {
               </div>
             </Show>
             <Show when="signed-in" >
-            <div className="flex gap-4 md:gap-6">
+            <div className="flex gap-5 md:gap-6">
                
              <button onClick={Toggle} className="flex items-center justify-center  ">
                   {theme === "dark" ? (
-                    <img src="./lightbtn.png" className="w-6 h-6 md:w-7 md:h-7" alt="light" />
+                    <img src="./lightbtn.png" className="w-7 h-7 md:w-8 md:h-8" alt="light" />
                   ) : (
-                    <img src="./darkbtn.png" className="w-6 h-6 md:w-8 md:h-8" alt="dark" />
+                    <img src="./darkbtn.png" className="w-7 h-7 md:w-8 md:h-8" alt="dark" />
                   )}
                 </button>
                 <div className="hidden sm:flex items-center justify-center">
@@ -49,9 +49,9 @@ function Navbar() {
                 </div>
                 <button onClick={() => setopen(!open)} className="flex sm:hidden items-center justify-center">
                     {theme === "dark" ? (
-                    <img src="./menulight.png" className="w-5 h-5 " alt="light" />
+                    <img src="./menulight.png" className="w-6 h-6 " alt="light" />
                   ) : (
-                    <img src="./menu.png" className="w-5 h-5" alt="dark" />
+                    <img src="./menu.png" className="w-6 h-6" alt="dark" />
                   )}
                 </button>
             
