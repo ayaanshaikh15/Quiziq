@@ -3,7 +3,7 @@ import Sidebar from './Sidebar'
 
 function Settings() {
   return (
-    <div className="pt-18 sm:pl-56 md:pl-64 m-8">
+    <div className="pt-18 sm:pl-56 md:pl-64 m-5">
         <Sidebar/>
          <div className="text-left ">
          <h1 className="font-bold text-3xl md:text-5xl">

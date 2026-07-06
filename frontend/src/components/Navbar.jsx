@@ -14,9 +14,9 @@ function Navbar() {
   return (
   
     <>
-      <nav className="flex fixed justify-between items-center bg-navbar h-17 top-0 left-0 w-full border-b border-ai-border">
-        <div className="text-text mx-6">QuizIQ</div>
-        <div className="flex mx-6">
+      <nav className="flex fixed justify-between items-center bg-navbar h-17 top-0 left-0 w-full border-b border-ai-border px-5">
+        <div className="text-text ">QuizIQ</div>
+        <div className="flex ">
           <header>
             <Show when="signed-out">
               <div className="flex gap-4 md:gap-6">
