@@ -20,9 +20,10 @@ function Menubar({open,setopen}) {
 const { signOut } = useClerk();
 
   return (
-    <div  className="flex sm:hidden fixed mt-17 inset-0 justify-end items-center blur-full bg-black/40  ">
-      <div className="h-full flex flex-col justify-between bg-navbar w-55 border border-l border-ai-border transition-colors duration-300 ease">
-    <div  className='flex flex-col justify-center m-3 gap-2' >
+    <div  className="grid grid-cols-2 grid-rows-1 sm:hidden fixed inset-0  blur-full bg-black/40  ">
+      <div className='h-full' onClick={(e)=>{setopen(false)}}></div>
+      <div className="h-full flex flex-col justify-between bg-navbar w-full border border-l border-ai-border ">
+    <div  className='flex flex-col justify-center m-4 gap-2' >
       {screens.map((val,index)=>
       <div className={`text-gray-500 cursor-pointer my-1 p-3 hover:text-gray-400 hover:bg-purple-500/20 rounded-2xl ${
       location.pathname === val.route

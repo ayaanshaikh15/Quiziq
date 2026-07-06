@@ -10,6 +10,7 @@ function Navbar() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
  const [open, setopen] = useState(false);
+ 
   return (
   
     <>
@@ -58,8 +59,16 @@ function Navbar() {
             </Show>
           </header>
         </div>
-       {open && <Menubar open={open} setopen={setopen} />}
-      </nav>
+         <div
+      className={`
+        fixed inset-0 z-50 mt-17
+        transform transition-transform duration-300 ease-in-out
+        ${open ? "translate-x-0" : "translate-x-full"}
+      `}
+    >
+     {open && <Menubar open={open} setopen={setopen} />}
+      </div>
+       </nav>
     </>
   );
 }
