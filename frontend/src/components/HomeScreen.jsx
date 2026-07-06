@@ -15,10 +15,10 @@ function HomeScreen() {
       alert(Prompt)
     };
   return (
-     <div className="pt-18 sm:pl-56 md:pl-64 m-5 ">
+     <div className="pt-18 sm:pl-56 md:pl-64 ">
         <Sidebar/>
             
-      <section className=" flex items-center justify-center sm:mt-14 lg:mt-1 mt-24">
+  <section className="h-[calc(100vh-4.25rem)]  p-5 flex items-center justify-center">
          <div className="text-center w-full ">
           <div>
             <h1 className="font-bold text-5xl md:text-7xl">
@@ -69,9 +69,8 @@ function HomeScreen() {
               </div>
             </form>
           </div>
-          
+         
         </div>
-       
       </section>
      </div>
   )

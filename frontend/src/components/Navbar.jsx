@@ -1,15 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/react";
 import { ThemeContext } from "../ThemeContext";
+import Menubar from "./Menubar";
 function Navbar() {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const Toggle = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
-
+ const [open, setopen] = useState(false);
   return (
+  
     <>
       <nav className="flex fixed justify-between items-center bg-navbar h-17 top-0 left-0 w-full border-b border-ai-border">
         <div className="text-text mx-6">QuizIQ</div>
@@ -41,11 +43,22 @@ function Navbar() {
                     <img src="./darkbtn.png" className="w-6 h-6 md:w-8 md:h-8" alt="dark" />
                   )}
                 </button>
-            <UserButton/>
+                <div className="hidden sm:flex items-center justify-center">
+                  <UserButton/>
+                </div>
+                <button onClick={() => setopen(!open)} className="flex sm:hidden items-center justify-center">
+                    {theme === "dark" ? (
+                    <img src="./menulight.png" className="w-5 h-5 " alt="light" />
+                  ) : (
+                    <img src="./menu.png" className="w-5 h-5" alt="dark" />
+                  )}
+                </button>
+            
 </div>
             </Show>
           </header>
         </div>
+       {open && <Menubar open={open} setopen={setopen} />}
       </nav>
     </>
   );

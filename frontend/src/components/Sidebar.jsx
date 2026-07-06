@@ -28,7 +28,7 @@ const [open, setopen] = useState(false)
       </div>)}
     
      </div>
-     {open && <Model open={open} setopen={setopen} />}
+     {open && <Model open={open} setopen={setopen} msg="Are you sure you want to logout?" func={signOut} />}
      <footer onClick={()=>setopen(true)}  className="flex  border-t border-ai-border p-5 gap-2 items-center">
         <div  className='flex gap-2 cursor-pointer items-center'>
       <img  src='./logout.png' className="w-4 h-4  mx-1 " />
