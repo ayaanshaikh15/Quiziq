@@ -4,12 +4,13 @@ import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/react";
 import { ThemeContext } from "../ThemeContext";
 import Menubar from "./Menubar";
 function Navbar() {
-  const { theme, setTheme } = useContext(ThemeContext);
-
+  const { theme, setTheme ,issidbarOpen, setissidbarOpen} = useContext(ThemeContext);
+  // 
+  
   const Toggle = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
- const [open, setopen] = useState(false);
+  
  
   return (
   
@@ -39,19 +40,19 @@ function Navbar() {
                
              <button onClick={Toggle} className="flex items-center justify-center  ">
                   {theme === "dark" ? (
-                    <img src="./lightbtn.png" className="w-7 h-7 md:w-8 md:h-8" alt="light" />
+                    <img src="./lightbtn.png" className="w-6 h-6 md:w-7 md:h-7" alt="light" />
                   ) : (
-                    <img src="./darkbtn.png" className="w-7 h-7 md:w-8 md:h-8" alt="dark" />
+                    <img src="./darkbtn.png" className="w-6 h-6 md:w-7 md:h-7" alt="dark" />
                   )}
                 </button>
                 <div className="hidden sm:flex items-center justify-center">
                   <UserButton/>
                 </div>
-                <button onClick={() => setopen(!open)} className="flex sm:hidden items-center justify-center">
+                <button onClick={() => setissidbarOpen(!issidbarOpen)} className="flex sm:hidden items-center justify-center">
                     {theme === "dark" ? (
-                    <img src="./menulight.png" className="w-6 h-6 " alt="light" />
+                    <img src="./menulight.png" className="w-5 h-5 " alt="light" />
                   ) : (
-                    <img src="./menu.png" className="w-6 h-6" alt="dark" />
+                    <img src="./menu.png" className="w-5 h-5" alt="dark" />
                   )}
                 </button>
             
@@ -61,12 +62,12 @@ function Navbar() {
         </div>
          <div
       className={`
-        fixed inset-0 z-50 mt-17
+        fixed inset-0 z-10  mt-17
         transform transition-transform duration-300 ease-in-out
-        ${open ? "translate-x-0" : "translate-x-full"}
+        ${issidbarOpen ? "translate-x-0" : "translate-x-full"}
       `}
     >
-     {open && <Menubar open={open} setopen={setopen} />}
+     {issidbarOpen && <Menubar open={issidbarOpen} setopen={setissidbarOpen} />}
       </div>
        </nav>
     </>

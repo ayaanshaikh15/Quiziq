@@ -16,6 +16,7 @@
     "@clerk/themes": "^2.4.57",
     "@tailwindcss/vite": "^4.3.1",
     "react": "^19.2.6",
+    "react-circular-progressbar": "^2.2.0",
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.18.1",
     "tailwindcss": "^4.3.1"

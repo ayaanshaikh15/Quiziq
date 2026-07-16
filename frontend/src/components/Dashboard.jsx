@@ -104,7 +104,7 @@ function Dashboard() {
           {data.map((value, index) => (
             <div
               key={index}
-              className="flex-1 bg-navbar shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] p-3 md:p-6 rounded-2xl border border-ai-border my-3  flex flex-col  md:gap-2   "
+              className="flex-1 bg-navbar shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] p-3 md:p-6 rounded-2xl border border-ai-border my-3  flex flex-col gap-1  md:gap-3   "
             >
               <div className="flex items-center font-bold ">
                 <img
@@ -115,13 +115,13 @@ function Dashboard() {
                 <br />
               </div>
               
-              <p className="bg-linear-to-r text-base md:text-4xl lg:text-5xl font-bold from-ai-gradient-from to-ai-gradient-to bg-clip-text text-transparent">
+              <p className="bg-linear-to-r text-2xl md:text-4xl lg:text-5xl font-bold from-ai-gradient-from to-ai-gradient-to bg-clip-text text-transparent">
                 {value.score}
               </p>
-               <div className="flex flex-col justify-between gap-1 md:gap-2">
+               <div className="flex flex-col justify-between ">
               <h3 className="text-[7px] md:text-[12px] lg:text-sm font-bold">{value.title}</h3>
              
-              <p className="text-gray-400 w-full border-none outline-none focus:outline-none focus:ring-0 text-[5.3px] md:text-[10px] lg:text-sm resize-none ">
+              <p className="text-gray-400 w-full border-none outline-none focus:outline-none focus:ring-0 text-[5.3px] md:text-[10px] lg:text-[10px] resize-none ">
                 {value.subtitle}
               </p>
               </div>

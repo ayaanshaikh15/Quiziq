@@ -45,7 +45,7 @@ function App() {
   />
 
   <Route
-    path="/score/:id"
+    path="/score"
     element={
       <ProtectedRoute>
         <Score />

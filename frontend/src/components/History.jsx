@@ -1,60 +1,44 @@
 import React, { useContext, useState } from "react";
 import Sidebar from "./Sidebar";
 import { ThemeContext } from "../ThemeContext";
+import { useNavigate } from "react-router-dom";
 
 function History() {
   const { theme } = useContext(ThemeContext);
   const [search, setsearch] = useState("");
+  const navigate = useNavigate();
   const quiz = [
-    { title: "JavaScript Basics", date: "2023-01-01", questions: 10, score: 9 },
-    { title: "React Components", date: "2023-01-02", questions: 15, score: 12 },
-    {
+    {id:1, title: "JavaScript Basics", date: "2023-01-01", questions: 10, score: 9 },
+    { id:2,title: "React Components", date: "2023-01-02", questions: 15, score: 12 },
+    {id:3,
       title: "Node.js Fundamentals",
       date: "2023-01-03",
       questions: 20,
       score: 18,
     },
-    {
+    {id:4,
       title: "Python Programming",
       date: "2023-01-04",
       questions: 25,
       score: 22,
     },
-    { title: "JavaScript Basics", date: "2023-01-01", questions: 10, score: 8 },
-    { title: "React Components", date: "2023-01-02", questions: 15, score: 12 },
-    {
-      title: "Node.js Fundamentals",
-      date: "2023-01-03",
-      questions: 20,
-      score: 18,
-    },
-    {
-      title: "Python Programming",
-      date: "2023-01-04",
-      questions: 25,
-      score: 22,
-    },
-    { title: "JavaScript Basics", date: "2023-01-01", questions: 10, score: 8 },
-    { title: "React Components", date: "2023-01-02", questions: 15, score: 12 },
-    {
-      title: "Node.js Fundamentals",
-      date: "2023-01-03",
-      questions: 20,
-      score: 18,
-    },
-    {
-      title: "Python Programming",
-      date: "2023-01-04",
-      questions: 25,
-      score: 22,
-    },
+   
   ];
   const handleDownload = (value, e) => {
     e.stopPropagation();
     alert("Download started!"); // Prevent the click event from propagating to the parent div
   };
-  const handleOpenQuiz = (value) => {
-    alert(`Opening quiz: ${value.title}`);
+  const handleOpenQuiz = async(value) => {
+    
+    try {
+      // Open browser in fullscreen
+      await document.documentElement.requestFullscreen();
+
+      // Navigate to fullscreen page
+      navigate(`/quiz/:${value.id}`);
+    } catch (err) {
+      console.error("Failed to enter fullscreen:", err);
+    }
   };
   return (
     <>

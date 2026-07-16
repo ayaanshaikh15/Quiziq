@@ -11,8 +11,10 @@ export function ThemeProvider({ children }) {
   document.documentElement.classList.toggle("dark", theme === "dark");
   localStorage.setItem("theme", theme);
 }, [theme]);
+const [issidbarOpen, setissidbarOpen] = useState(false);
+
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme,issidbarOpen,setissidbarOpen }}>
       {children}
     </ThemeContext.Provider>
   );

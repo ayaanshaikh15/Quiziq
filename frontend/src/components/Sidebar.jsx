@@ -16,7 +16,7 @@ const { signOut } = useClerk();
 const [open, setopen] = useState(false)
   return (
     <>
-    <div className="hidden sm:flex fixed top-17 left-0 w-56 md:w-64 h-[calc(100vh-4rem)] flex-col justify-between border-r border-ai-border bg-navbar">
+    <div className="hidden  sm:flex fixed top-17 left-0 w-56 md:w-64 h-[calc(100vh-4rem)] flex-col justify-between border-r border-ai-border bg-navbar">
   <div  className='flex flex-col justify-center m-3'>
       {screens.map((val,index)=>
       <div className={`text-gray-500 cursor-pointer my-1 p-4 hover:text-gray-400 hover:bg-purple-500/20 rounded-2xl ${
